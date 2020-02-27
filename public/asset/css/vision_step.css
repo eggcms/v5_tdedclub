@@ -1,0 +1,98 @@
+.div-table{
+    display:table;
+    width: 100%;
+}
+.div-tablerow{
+    display:table-row;
+}
+#vision-hdp .div-tablecell{
+    display:table-cell;
+    line-height: 1.5em;
+    vertical-align: middle;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+}
+.div-cell-head{
+    background: #3e3e3e;
+    color:#fff;
+    text-align:center;
+    padding:5px 1px;
+}
+.league-name{
+    text-align: left !important;
+    color: #fff;
+    background: #202020;
+    font-size: 16px;
+    background: #1d1d1d;
+    font-weight: bold;
+    padding: 15px 15px 8px 15px;
+}
+.cell5{
+    width:5%;
+}
+.cell7{
+    width:7%;
+}
+.cell8{
+    width:8%;
+}
+.cell13{
+    width:13%;
+}
+.cell15{
+    width:15%;
+}
+.cell16{
+    width:16%;
+}
+.cell20{
+    width:20%;
+}
+.cell21{
+    width:21%;
+}
+#vision-hdp{
+    font-size: 14px;
+    color: #000;
+}
+.bg-w{
+    background:#fff;
+    text-align:center;
+}
+.bg-g{
+    background:#ECEBEB;
+    text-align:center;
+}
+.bg-y{
+    background:#FFF9C2;
+    text-align:center;
+}
+.bg-y2{
+    background:#f5ffd1;
+    text-align:center;
+}
+
+.team-ab{
+    text-align: left; 
+}
+
+.team-a,.team-b{
+    display: inline-table;
+    margin: 2px;
+}
+  
+@media screen and (max-width: 602px) {
+    #vision-hdp{
+        font-size: 7px;
+    }
+}
+@media screen and (max-width: 602px) {
+    .team-a,.team-b{
+        margin: 1px;
+    }
+}
+@media screen and (max-width: 602px) {
+    .league-name{
+        padding: 0;
+    }
+}

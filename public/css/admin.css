@@ -1,0 +1,70 @@
+ body {
+    font-family: 'Kanit', sans-serif;
+    font-size:16px;
+    font-weight: 300;
+    /* background:#92bde7; */
+    /* background:#f9feff; */
+    color:#485e74;
+    line-height:1.4;
+}
+
+h1,h2,h3,h4,h5 { font-weight: 400; }
+h1 { font-size:1.3em }
+h3 { font-size:1.1em }
+/*
+    DEMO STYLE
+*/
+
+a,
+a:hover,
+a:focus {
+    color: inherit;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+#content{
+    /* background-color:#fff; */
+    padding:20px;
+    min-height: 650px;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+}
+ul.sbar {
+    padding:0;
+    overflow-y: auto;
+}
+ul.sbar > li {
+    list-style-type: none;
+    padding:10px 20px;
+    border-bottom:1px dotted #eee;
+}
+ul.sbar > li.actived,ul.sbar > li:focus { background-color:#fff }
+ul.sbar > li:hover {
+    background:#fff;
+}
+ul.sbar > li:last-child {
+    border: none;
+}
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (max-width: 768px) {
+    #sidebar {
+        margin-left: -250px;
+    }
+    #sidebar.active {
+        margin-left: 0;
+    }
+    #sidebarCollapse span {
+        display: none;
+    }
+}

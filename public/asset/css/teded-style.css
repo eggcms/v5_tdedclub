@@ -1,0 +1,23 @@
+@import "https://fonts.googleapis.com/css?family=Courgette|Kanit:300,300i,400,400i,500,500i,600,600i|Raleway:600,600i&display=swap";
+
+body {
+    font-family:'Kanit';
+    font-size:16px;
+    font-weight:300;
+    height: 100vh;
+    min-height: 500px;
+    background-image: url('../img/bg02.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;  
+   /* background:#111 url('../img/bg02.jpg') center center no-repeat fixed; */
+   color:#aaa;
+}
+.bg-black { background-image: #202020;}
+b { font-weight:500; }
+h1,h2,h3,h4,h5 { font-family:'Kanit'; font-weight:300; }
+h1 { font-size:1.5rem; }
+h2 { font-size:1.35rem; }
+h3 { font-size:1.2rem; }
+h4 { font-size:1.1rem; }
+h5 { font-size:0.98rem; }
