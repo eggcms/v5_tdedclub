@@ -56,7 +56,7 @@
 <div class="api">
     <div class="container bg-black">
         <div class="row">
-            <div class="col-12 pb-2">{{ballstep($objs)}}</div>
+            <div class="col-12 pb-2">{{ballstep($objs,'primary')}}</div>
             {{-- <div class="col-12 pb-2">
                 <img style="width:100%;" src="images/api1.png" alt="">
             </div> --}}
