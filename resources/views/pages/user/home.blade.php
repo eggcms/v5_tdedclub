@@ -13,7 +13,7 @@
     {{ $meta_description }}
 @else
     ทีเด็ดคลับดอทคอม ศูนย์รวมทีเด็ดบอลสเต็ป ข้อมูลบอลจากลีกดังทั่วโลก โดยมุ่งเน้นข้อมูลที่ถูกต้อง ฉับไวเที่ยงตรง โดยบรรดากูรู ระดับเซียนในวงการลูกหนัง
-@endif 
+@endif
 @endsection
 
 @section('content')
@@ -49,10 +49,11 @@
         <div class="row">
             <div class="col-12 col-lg-4">
                 <div class="row">
-                    @include('component.line-notify')
                     <div class="col">
+                        <a href="#"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
                         <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
                     </div>
+                    @include('component.line-notify')
                 </div>
             </div>
             <div class="col-8">
@@ -114,7 +115,7 @@
                     </div>
                 </a>
                 @endforeach
-            </div> 
+            </div>
         </div>
     </div>
 </div>
@@ -131,7 +132,7 @@
                     <iframe src="{{$yt->clip}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
-            @endforeach 
+            @endforeach
         </div>
     </div>
 </div>
@@ -180,7 +181,7 @@
                             <p>{{$an->title}}</p>
                         </a>
                     </div>
-                    @endforeach 
+                    @endforeach
                 </div>
             </div>
         </div>
@@ -237,7 +238,7 @@
                             <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team2w']}}">{{$ts['team2']}}</span></p>
                         @else
                             <p class="py-1">&nbsp;</p>
-                        @endif           
+                        @endif
                     </div>
                     <div class="py-2">
                         @if($ts['team3'] != '')
@@ -245,11 +246,11 @@
                         @else
                             <p class="py-1">&nbsp;</p>
                         @endif
-                        
+
                     </div>
                 </div>
             </div>
-            @endforeach  
+            @endforeach
         </div>
     </div>
 </div>
@@ -284,7 +285,7 @@
 <div class="api">
     <div class="container bg-black">
         <div class="row">
-             <div class="col-12 pb-2">{{ballstep($objs)}}</div> 
+             <div class="col-12 pb-2">{{ballstep($objs)}}</div>
         </div>
     </div>
 </div>
