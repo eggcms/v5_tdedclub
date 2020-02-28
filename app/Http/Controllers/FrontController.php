@@ -65,7 +65,7 @@ class FrontController extends Controller
 		else {
 			for($i=1;$i<=8;$i++){
 				$dataxSet[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team3"=> '',"team1w"=> '',"team2w"=> '',"team3w"=> '',"created_at"=> '',"updated_at"=> '',"avatar"=>'no-avatar.jpg',"line"=>'',"facebook"=>''];
-			}			
+			}
 		}
 
 		return view('pages.user.home',[
@@ -147,8 +147,12 @@ class FrontController extends Controller
     }
 
     public function lineNotify(Request $request) {
+<<<<<<< HEAD
 		$message='name: '.$request->fullname.' mobile: '.$request->phone.' LineID: '.$request->lineid;
 
+=======
+        $message='name: '.$request->fullname.' mobile: '.$request->phone.' LineID: '.$request->lineid;
+>>>>>>> 96a94adef9884a44249b03f80fd6fc0c628c2ef4
         // tdedclub token: E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0
         $token = 'E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0';
         $ch = curl_init();
@@ -165,11 +169,11 @@ class FrontController extends Controller
         curl_close( $ch );
         return Redirect()->back();
 	}
-	
+
     public function liveball() {
         return view('pages.user.live-page',[
 			'meta_title'=>'ทีเด็ดคลับดอทคอม ดูบอลบสด ศูนย์รวมข่าวสารวงการบอล จากลีกดังทั่วโลก',
 			'meta_description'=>'ทีเด็ดคลับดอทคอม ดูบอลบสด ศูนย์รวมข่าวสารวงการบอล จากลีกดังทั่วโลก เที่ยงตรง กระชับ ฉับไว',
-		]);			
+		]);
 	}
 }

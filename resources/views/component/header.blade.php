@@ -32,7 +32,7 @@
 										<a class="social-icon" href="https://www.facebook.com/tdedclub88/?modal=admin_todo_tour" target="_blank">
 												<i class="fab fa-facebook-square"></i>
 										</a>
-										<a class="social-icon" href="http://nav.cx/52dtFXm" target="_blank">
+										<a class="social-icon" href="http://line.me/ti/p/~@tdedclub88" target="_blank">
 												<i class="fab fa-line"></i>
 										</a>
 										<a class="social-icon" href="https://www.youtube.com/channel/UC16ARWLOwdN411sIvN0P_9Q" target="_blank">
@@ -45,7 +45,7 @@
 								<a class="social-icon" href="https://www.facebook.com/tdedclub88/?modal=admin_todo_tour"  target="_blank">
 									<i class="fab fa-facebook-square"></i>
 								</a>
-								<a class="social-icon" href="http://nav.cx/52dtFXm"  target="_blank">
+								<a class="social-icon" href="http://line.me/ti/p/~@tdedclub88"  target="_blank">
 									<i class="fab fa-line"></i>
 								</a>
 								<a class="social-icon" href="https://www.youtube.com/channel/UC16ARWLOwdN411sIvN0P_9Q"  target="_blank">
