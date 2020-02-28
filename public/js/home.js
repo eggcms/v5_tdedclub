@@ -13,5 +13,8 @@ $(document).ready(function(){
      }, 400);
      return false;
     });
+});
 
-   });
+function changeChannel(value) {
+    createPlayer(value, "livePlayer", "true", "100%", "../images/logo-chnnal.png", "top-right");
+ }

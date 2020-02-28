@@ -56,8 +56,12 @@
                 </div>
             </div>
             <div class="col-8">
-                <img class="img-doball" src="/images/bg-channal.jpg" alt="">
-                <img class="leauge" src="/images/bn-leauge.png" alt="">
+                <div>
+                    <div id="mPlayer" class="bg-light"></div>
+                </div>
+                <div>
+                    <img class="leauge" src="/images/bn-leauge.png" alt="">
+                </div>
             </div>
         </div>
     </div>

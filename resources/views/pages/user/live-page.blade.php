@@ -23,6 +23,9 @@
 			<p><i class="fas fa-home"></i><a href="{{ url('/')}}"> <span>หน้าแรก</span></a>
 			<i class="fas fa-angle-right"></i> <span>ดูบอลสด</span></p>
 		<div class="row">
+			<div class="col-12 my-2">
+                <div id="livePlayer"></div>
+            </div>
 			{{--  <div class="container bg-black pb-3">
 				<div class="row">
 					@foreach($youtubes as $yt)
@@ -34,6 +37,8 @@
 					@endforeach
 				</div>
 			</div>  --}}
+
+
 			<div class="banner-1 pb-2">
 				<div class="container bg-black">
 					<div class="row">		
@@ -48,7 +53,26 @@
 <div class="api">
 	<div class="container bg-black">
 		<div class="row">
-				<div class="col-12 pb-2">{{ball_table()}}</div>
+			<div class="col-12">
+				{{ ball_table() }}
+			</div>
+			@php
+			$dir = public_path('images/channel/*.png');
+			$images = glob($dir);
+
+			foreach($images as $image) {
+				$total = explode("channel/",$image);
+				$name=explode(".",$total[1]);
+				echo "
+					<div class='col-3 col-sm-2 col-lg-2 col-xl-1 mb-2'>
+						<a href='#'".$name[0]."' onclick='return changeChannel(\"".$name[0]."\");'>
+							<img src='images/channel/".$name[0].".png' class='img-fluid'>
+						</a>
+					</div>";
+				}
+
+			@endphp
+			
 		</div>
 	</div>
 </div>

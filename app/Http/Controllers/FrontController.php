@@ -147,7 +147,8 @@ class FrontController extends Controller
     }
 
     public function lineNotify(Request $request) {
-        $message='name: '.$request->fullname.' mobile: '.$request->phone.' LineID: http://line.me/ti/p/~'.$request->lineid;
+		$message='name: '.$request->fullname.' mobile: '.$request->phone.' LineID: '.$request->lineid;
+
         // tdedclub token: E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0
         $token = 'E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0';
         $ch = curl_init();
@@ -155,7 +156,7 @@ class FrontController extends Controller
         curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, 0);
         curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, 0);
         curl_setopt( $ch, CURLOPT_POST, 1);
-        curl_setopt( $ch, CURLOPT_POSTFIELDS, "message=$message");
+		curl_setopt( $ch, CURLOPT_POSTFIELDS, "message=$message");
         curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, 1);
         $headers = array( "Content-type: application/x-www-form-urlencoded", "Authorization: Bearer $token", );
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
@@ -166,7 +167,6 @@ class FrontController extends Controller
 	}
 	
     public function liveball() {
-		//$embed = ball_table();
         return view('pages.user.live-page',[
 			'meta_title'=>'ทีเด็ดคลับดอทคอม ดูบอลบสด ศูนย์รวมข่าวสารวงการบอล จากลีกดังทั่วโลก',
 			'meta_description'=>'ทีเด็ดคลับดอทคอม ดูบอลบสด ศูนย์รวมข่าวสารวงการบอล จากลีกดังทั่วโลก เที่ยงตรง กระชับ ฉับไว',
