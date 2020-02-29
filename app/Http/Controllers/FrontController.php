@@ -76,7 +76,8 @@ class FrontController extends Controller
 			'analyzes'=>$analyzes,
 			'objs'=>$objs,
             'youtubes'=>$yous,
-            'tstepsx'=>$dataxSet
+            'tstepsx'=>$dataxSet,
+            'tstep_count'=>$max_tstep,
 		]);
 	}
 
