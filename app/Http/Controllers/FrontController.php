@@ -32,8 +32,8 @@ class FrontController extends Controller
 		$dataxSet = [];
 		$im=0;
         if ($max_tstep > 0) {
-			$im++;
 			foreach($tstepsx as $ttsx) {
+                $im = $im + 1;
 				$av = User::where('id',$ttsx->uid)->first();
 				if ($ttsx->team1w == 0) { $ttsx->team1w='black'; }
 				elseif ($ttsx->team1w == 1) { $ttsx->team1w='red'; }
@@ -179,7 +179,7 @@ class FrontController extends Controller
 		]);
 	}
 
-	
+
 	public function check_lotto(Request $request) {
 
 		$myLotto=$request->input('ur_lotto');
@@ -202,7 +202,7 @@ class FrontController extends Controller
 			'lotto_at'=>$lotto_at,
 			'reason'=>$result['reason'],
 			'mylotto'=>$result['mylotto'],
-		]);	
+		]);
 	}
 
 	public function lotto() {
@@ -223,6 +223,6 @@ class FrontController extends Controller
 			'lotto_last2'=>$lotto->lotto_last2,
 			'lotto_at'=>$lotto_at,
 			'reason'=>'none',
-		]);		
+		]);
 	}
 }
