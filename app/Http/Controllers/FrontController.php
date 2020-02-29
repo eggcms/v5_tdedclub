@@ -26,7 +26,7 @@ class FrontController extends Controller
 		$objs = json_decode($json);
 
 		$you = new Youtube;
-		$yous = $you->orderBy('id','desc')->take(2)->get();
+		$yous = $you->orderBy('id','desc')->whereNotNull('clip')->take(2)->get();
 
 		$max_tstep=$tstepsx->count();
 		$dataxSet = [];
