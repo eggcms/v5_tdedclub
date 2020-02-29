@@ -220,13 +220,13 @@
                     <a href="tsLineID($ts['img'])"><img src="{{url('/images/step-'. $ts['img'] .'.gif')}}" class="img-fluid"></a>
                 </div>
                 <div class="tdedstep">
-                <div class="py-2">
-                    @if($ts['team1'] != '')
-                        <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team1w']}}">{{$ts['team1']}}</span></p>
-                    @else
-                        <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
-                    @endif
-                </div>
+                    <div class="py-2">
+                        @if($ts['team1'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team1w']}}">{{$ts['team1']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+                    </div>
                     <div class="py-2 bg-grey">
                         @if($ts['team2'] != '')
                             <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team2w']}}">{{$ts['team2']}}</span></p>
@@ -243,10 +243,10 @@
 
                     </div>
                 </div>
-            </div>            
+            </div>
 
             @endforeach
-        </div>                
+        </div>
             {{-- @if($tstep_count < 8)
 ทดสอบ
             @else
