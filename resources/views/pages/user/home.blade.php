@@ -217,7 +217,7 @@
              @foreach($tsteps as $ts)
             <div class="col-12 col-lg-3 py-2">
                 <div class="img-tded">
-                    <a href="{{tslineID($ts['img'])}}"><img src="{{url('images/'.$ts['img'])}}" class="img-fluid"></a> 
+                    <a href="{{tslineID($ts['img'])}}"><img src="{{url('images/step-' . $ts['img'] . '.gif')}}" class="img-fluid"></a>
                 </div>
                 <div class="tdedstep">
                 <div class="py-2">
