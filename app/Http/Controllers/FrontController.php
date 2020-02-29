@@ -152,7 +152,8 @@ class FrontController extends Controller
     }
 
     public function lineNotify(Request $request) {
-		$message='ชื่อ '.$request->fullname."\n".'หมายเลขโทรศัพท์: '.$request->phone."\n".'Line-ID: '.$request->lineid."\n";
+		$message='name: '.$request->fullname.' mobile: '.$request->phone.' LineID: '.$request->lineid;
+
         // tdedclub token: E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0
         $token = 'E85WI8wJ3xDUBlxLR0xGl9zOeep3TseAQMmyKA4kJw0';
         $ch = curl_init();
