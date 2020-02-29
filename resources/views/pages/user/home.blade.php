@@ -50,8 +50,8 @@
             <div class="col-12 col-lg-4">
                 <div class="row">
                     <div class="col">
-                        <a href="#"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
-                        <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
+                        <a href="#" class="py-2 d-inline-block"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
+                        <a href="http://nav.cx/52dtFXm" class="pb-2 d-inline-block"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
                     </div>
                     @include('component.line-notify')
                 </div>
