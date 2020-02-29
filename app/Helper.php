@@ -14,7 +14,14 @@ function serv_url($data='') {
    else return $mainServ.'/';
 }
 
-function visit($id, $act='',$db='news') { 
+function tsLineID($id) {
+   if ($id == 1) { return 'http://line.me/ti/p/~@tdedclub88'; }
+   else {
+      return 'http://line.me/ti/p/~@tdedclub88';
+   }
+}
+
+function visit($id, $act='',$db='news') {
    if ($db == 'news') {
       $v = DB::table('blogs')->where('id', $id)->first();
       if ($act == 'show') return $v->visit;
@@ -66,7 +73,7 @@ function creator($uid) {
     $db=DB::table('users')->where('id',$uid)->first();
     if ($db==null) return 'ไม่มีการระบุ';
     else return  $db->name;
-    
+
 }
 
 function LineNotify($message, $token="")
@@ -138,7 +145,7 @@ function ball_table() {
 
       // Cycle through the array
       foreach ($data->programs as $idx => $programs) {
-            
+
          // Output a row
          echo "<tr class='text-light'>";
          $text_date = substr($programs->datetime,0,11);
@@ -196,7 +203,7 @@ function ballstep($obj,$cls='danger') {
          <h3><span style="font-size:18px; color: #909090;">ประจำวันที่</span> '.thaiDate(date('d-m-Y'),'off').'</h3>
       </div>
    </div>';
- 
+
     $league='';
     foreach($obj->data as $ob) {
       if ($ob->league_name != $league) {
@@ -217,9 +224,9 @@ function ballstep($obj,$cls='danger') {
             <div class="div-tablecell div-cell-head cell16">สูง/ต่ำ</div>
             <div class="div-tablecell div-cell-head cell7">สกอร์ที่คาด</div>
             <div class="div-tablecell div-cell-head cell20">ทรรศนะบอล</div>
-            <div class="div-tablecell div-cell-head cell13">ฟันธงสูง-ต่ำ</div> 
+            <div class="div-tablecell div-cell-head cell13">ฟันธงสูง-ต่ำ</div>
             </div>
-         </div>';                   
+         </div>';
       }
       $time = explode(':', $ob->clock);
       $styleTorH = $styleTorA = "";
@@ -242,7 +249,7 @@ function ballstep($obj,$cls='danger') {
       $time = str_replace('AM', ' AM', $arrClock[1]);
       $time = str_replace('PM', ' PM', $time);
       $dateTime = ($date != '') ? $date.' '.$time : $time;
-      $dateTime = date('H:i', strtotime($dateTime) - 3600);  
+      $dateTime = date('H:i', strtotime($dateTime) - 3600);
       echo '<div class="div-table" id="vision-hdp">
          <div class="div-tablerow">
             <div class="div-tablecell cell7 bg-w">'.$dateTime.'</div>
@@ -264,7 +271,7 @@ function ballstep($obj,$cls='danger') {
             <div class="div-tablecell cell8 bg-w"><span class="team-a"'.$priceOver.'>'.$ob->full_goal_over.'</span><br/><span class="team-b" '.$priceUnder.'> '.$ob->full_goal_under.' </span></div>
             <div class="div-tablecell cell7 bg-w">'.$ob->vision_score.'</div>
             <div class="div-tablecell cell20 bg-y">'.$ob->vision.'</div>
-            <div  class="div-tablecell cell13 bg-y2">'.$ob->vision_over_under.'</div>    
+            <div  class="div-tablecell cell13 bg-y2">'.$ob->vision_over_under.'</div>
          </div>
       </div>';
    }
@@ -280,7 +287,7 @@ function hdp($obj) {
    <hr class="gr">
    <a href="'.url('/').'"><i class="fas fa-home text-danger"></i> <span class="text-light">หน้าแรก</span></a> <i class="fas fa-angle-right text-danger"></i> <span class="text-info">ราคาบอลเด็ด ทรรศนะบอลคู่ ทีเด็ดฟันธงบอลคู่</span>
    <hr class="gr">';
-   
+
    $league='';
    foreach($obj->data as $ob) {
       if ($ob->league_name != $league) {
@@ -301,9 +308,9 @@ function hdp($obj) {
             <div class="div-tablecell div-cell-head cell16">สูง/ต่ำ</div>
             <div class="div-tablecell div-cell-head cell7">สกอร์ที่คาด</div>
             <div class="div-tablecell div-cell-head cell20">ทรรศนะบอล</div>
-            <div class="div-tablecell div-cell-head cell13">ฟันธงสูง-ต่ำ</div> 
+            <div class="div-tablecell div-cell-head cell13">ฟันธงสูง-ต่ำ</div>
             </div>
-         </div>';                   
+         </div>';
       }
       $time = explode(':', $ob->clock);
       $styleTorH = $styleTorA = "";
@@ -326,7 +333,7 @@ function hdp($obj) {
       $time = str_replace('AM', ' AM', $arrClock[1]);
       $time = str_replace('PM', ' PM', $time);
       $dateTime = ($date != '') ? $date.' '.$time : $time;
-      $dateTime = date('H:i', strtotime($dateTime) - 3600);  
+      $dateTime = date('H:i', strtotime($dateTime) - 3600);
       echo '<div class="div-table" id="vision-hdp">
          <div class="div-tablerow">
             <div class="div-tablecell cell7 bg-w">'.$dateTime.'</div>
@@ -348,7 +355,7 @@ function hdp($obj) {
             <div class="div-tablecell cell8 bg-w"><span class="team-a"'.$priceOver.'>'.$ob->full_goal_over.'</span><br/><span class="team-b" '.$priceUnder.'> '.$ob->full_goal_under.' </span></div>
             <div class="div-tablecell cell7 bg-w">'.$ob->vision_score.'</div>
             <div class="div-tablecell cell20 bg-y">'.$ob->vision.'</div>
-            <div  class="div-tablecell cell13 bg-y2">'.$ob->vision_over_under.'</div>    
+            <div  class="div-tablecell cell13 bg-y2">'.$ob->vision_over_under.'</div>
          </div>
       </div>';
    }

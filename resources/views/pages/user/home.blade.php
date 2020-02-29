@@ -50,8 +50,8 @@
             <div class="col-12 col-lg-4">
                 <div class="row">
                     <div class="col">
-                        <a href="#"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
-                        <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
+                        <a href="#" class="py-2 d-inline-block"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
+                        <a href="http://nav.cx/52dtFXm" class="pb-2 d-inline-block"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
                     </div>
                     @include('component.line-notify')
                 </div>
@@ -213,21 +213,49 @@
 <div id="zeantded">
     <div class="container bg-black">
         <div class="row">
-
-             @foreach($tstepsx as $ts)
+{{-- @dd($tsteps) --}}
+            @foreach($tsteps as $ts)
             <div class="col-12 col-lg-3 py-2">
                 <div class="img-tded">
-                    @if($ts['avatar'] != '')
-                        @if($ts['line'] != '')
-                            {{-- <a href="$ts['line']"><img src="{{url('/avatar/'.$ts['avatar'])}}" class="img-fluid"></a> --}}
-                            <img src="{{url('/images/zean.gif')}}" class="img-fluid">
+                    <a href="tsLineID($ts['img'])"><img src="{{url('/images/step-'. $ts['img'] .'.gif')}}" class="img-fluid"></a>
+                </div>
+                <div class="tdedstep">
+                    <div class="py-2">
+                        @if($ts['team1'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team1w']}}">{{$ts['team1']}}</span></p>
                         @else
-                            <img src="{{url('/images/zean.gif')}}" class="img-fluid">
-                            {{-- <img src="{{url('/avatar/'.$ts['avatar'])}}" class="img-fluid"> --}}
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
                         @endif
-                    @else
-                        <img src="{{url('/images/zean.gif')}}" class="img-fluid">
-                    @endif
+                    </div>
+                    <div class="py-2 bg-grey">
+                        @if($ts['team2'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team2w']}}">{{$ts['team2']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+                    </div>
+                    <div class="py-2">
+                        @if($ts['team3'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team3w']}}">{{$ts['team3']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+
+                    </div>
+                </div>
+            </div>
+
+            @endforeach
+        </div>
+            {{-- @if($tstep_count < 8)
+ทดสอบ
+            @else
+            @foreach($tstepsx as $ts)
+            <div class="col-12 col-lg-3 py-2">
+                <div class="img-tded">
+                    <a href="http://line.me/ti/p/~@tdedclub88">
+                        <img src="{{url('/images/step-'. $ts->id .'.gif')}}" class="img-fluid">
+                    </a>
                 </div>
                 <div class="tdedstep">
                 <div class="py-2">
@@ -255,6 +283,8 @@
                 </div>
             </div>
             @endforeach
+            @endif --}}
+            </div>
         </div>
     </div>
 </div>

@@ -11,6 +11,7 @@
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
         <link href="/asset/css/style.css" rel="stylesheet"/>
         <link href="https://vjs.zencdn.net/7.5.5/video-js.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
         <link href="{{url('asset/css/vision_step.css')}}" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Kanit:200,400,600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -29,7 +30,6 @@
             @include('component.footer')
         </footer>
     </body>
-    <script src="https://kit.fontawesome.com/9418a5bf95.js" crossorigin="anonymous"></script>
     <script src="{{ url('js/home.js') }}" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -39,5 +39,5 @@
     </script>
     <script>
         createPlayer("truesport2", "mPlayer", "true", "100%", "{{url('images/logo-chnnal.png')}}", "top-right");
-    </script> 
+    </script>
     </html>
