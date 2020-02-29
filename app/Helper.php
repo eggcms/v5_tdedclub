@@ -14,6 +14,13 @@ function serv_url($data='') {
    else return $mainServ.'/';
 }
 
+function tsLineID($id) {
+   if ($id == 1) { return 'http://line.me/ti/p/~@tdedclub88'; }
+   else {
+      return 'http://line.me/ti/p/~@tdedclub88';
+   }
+}
+
 function visit($id, $act='',$db='news') {
    if ($db == 'news') {
       $v = DB::table('blogs')->where('id', $id)->first();

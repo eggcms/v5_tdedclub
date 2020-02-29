@@ -28,8 +28,10 @@ class FrontController extends Controller
 		$yous = $you->orderBy('id','desc')->take(2)->get();
 
 		$max_tstep=$tstepsx->count();
-        $dataxSet = [];
+		$dataxSet = [];
+		$im=0;
         if ($max_tstep > 0) {
+			$im++;
 			foreach($tstepsx as $ttsx) {
 				$av = User::where('id',$ttsx->uid)->first();
 				if ($ttsx->team1w == 0) { $ttsx->team1w='black'; }
@@ -52,19 +54,21 @@ class FrontController extends Controller
 					"team3w"=> $ttsx->team3w,
 					"created_at"=> $ttsx->created_at,
                     "updated_at"=> $ttsx->updated_at,
-					"avatar"=> $av->avatar,
+					"img"=> $im,
 					"facebook"=> $av->facebook,
-					"line"=> $av->line
+					"userline"=> $av->line
 				];
 			}
 			$mm = (8 - $max_tstep);
 			for($i=1;$i<=$mm;$i++){
-				$dataxSet[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team3"=> '',"team1w"=> '',"team2w"=> '',"team3w"=> '',"created_at"=> '',"updated_at"=> '',"avatar"=>'no-avatar.jpg',"line"=>'',"facebook"=>''];
+				$imi=$im+$i;
+				$dataxSet[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team3"=> '',"team1w"=> '',"team2w"=> '',"team3w"=> '',"created_at"=> '',"updated_at"=> '',"img"=>$imi,"line"=>''];
 			}
 		}
 		else {
 			for($i=1;$i<=8;$i++){
-				$dataxSet[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team3"=> '',"team1w"=> '',"team2w"=> '',"team3w"=> '',"created_at"=> '',"updated_at"=> '',"avatar"=>'no-avatar.jpg',"line"=>'',"facebook"=>''];
+				$imi=$im+$i;
+				$dataxSet[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team3"=> '',"team1w"=> '',"team2w"=> '',"team3w"=> '',"created_at"=> '',"updated_at"=> '',"img"=>$imi,"line"=>''];
 			}
 		}
 
@@ -76,7 +80,7 @@ class FrontController extends Controller
 			'analyzes'=>$analyzes,
 			'objs'=>$objs,
             'youtubes'=>$yous,
-            'tstepsx'=>$dataxSet,
+            'tsteps'=>$dataxSet,
             'tstep_count'=>$max_tstep,
 		]);
 	}

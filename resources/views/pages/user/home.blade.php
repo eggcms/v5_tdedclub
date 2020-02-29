@@ -213,7 +213,41 @@
 <div id="zeantded">
     <div class="container bg-black">
         <div class="row">
-            @if($tstep_count < 8)
+{{-- @dd($tsteps) --}}
+            @foreach($tsteps as $ts)
+            <div class="col-12 col-lg-3 py-2">
+                <div class="img-tded">
+                    <a href="tsLineID($ts['img'])"><img src="{{url('/images/step-'. $ts['img'] .'.gif')}}" class="img-fluid"></a>
+                </div>
+                <div class="tdedstep">
+                <div class="py-2">
+                    @if($ts['team1'] != '')
+                        <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team1w']}}">{{$ts['team1']}}</span></p>
+                    @else
+                        <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                    @endif
+                </div>
+                    <div class="py-2 bg-grey">
+                        @if($ts['team2'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team2w']}}">{{$ts['team2']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+                    </div>
+                    <div class="py-2">
+                        @if($ts['team3'] != '')
+                            <p><img class="img-1" src="/images/ball.gif" alt=""><span style="color:{{$ts['team3w']}}">{{$ts['team3']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+
+                    </div>
+                </div>
+            </div>            
+
+            @endforeach
+        </div>                
+            {{-- @if($tstep_count < 8)
 ทดสอบ
             @else
             @foreach($tstepsx as $ts)
@@ -249,8 +283,8 @@
                 </div>
             </div>
             @endforeach
-            @endif
-
+            @endif --}}
+            </div>
         </div>
     </div>
 </div>
