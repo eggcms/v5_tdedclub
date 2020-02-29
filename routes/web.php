@@ -12,7 +12,8 @@ Route::get('/tdstep', 'FrontController@fullpage');
 Route::get('/tdstep2', 'FrontController@fullpage2');
 Route::post('/line-notify', 'FrontController@lineNotify');
 Route::get('/live', 'FrontController@liveball');
-
+Route::get('/lotto', 'FrontController@lotto');
+Route::post('/lotto', 'FrontController@check_lotto');
 
 // Route::get('/tded', function () {
 //     return view('pages.user.tded');

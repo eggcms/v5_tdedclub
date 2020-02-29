@@ -16,9 +16,9 @@
 									<li class="nav-item">
 										<a class="nav-link px-0 py-0" href="/live"><span>ดูบอลสด</span></a>
 									</li>
-									{{-- <li class="nav-item">
-										<a class="nav-link px-0 py-0" href="/allnews"><span>ข่าวฟุตบอล</span></a>
-									</li> --}}
+									<li class="nav-item">
+										<a class="nav-link px-0 py-0" href="/lotto"><span>ตรวจหวย</span></a>
+									</li>
 									<li class="nav-item">
 										<a class="nav-link px-0 py-0" href="/allvicrow"><span>วิเคราะห์บอล</span></a>
 									</li>

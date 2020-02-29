@@ -4,7 +4,9 @@ body { font-family: 'Kanit', sans-serif!important; font-weight: 300; background-
 .bg-black{
     background-color: #000;
 }
-
+.bg-egg {
+    background-color: #fdfae3;
+}
 .bg-grey{
     background-color: rgb(225, 225, 225);
 }
@@ -43,6 +45,23 @@ body { font-family: 'Kanit', sans-serif!important; font-weight: 300; background-
          }
      }
 }
+
+.lotto_checked {
+    h1 { font-size:22px; font-weight: 600; }
+    h3 { font-size:32px; font-weight: 600; }
+}
+.lotto_result {
+    h1 { font-size:24px; }
+    h3 { font-size:20px; }
+}
+    
+.lao_lotto {
+    background: rgb(231, 231, 92);
+    h1 { font-size:28px; font-weight: 600; color:red; }
+    h2 { font-size:20px; font-weight: 600; }
+    h3 { font-size:30px; font-weight: 600; color:rgb(30, 30, 202) }
+}
+
 main {
     .news { 
         h3 { border-bottom: 2px solid #b40000; padding-bottom: 5px; margin: 0; }

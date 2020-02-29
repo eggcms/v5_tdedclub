@@ -1,5 +1,56 @@
 <?php
 
+function check_lotto($mylotto,$lotto) {
+   if ($mylotto == $lotto->lotto1) {
+      return ['reason'=>'คุณถูกรางวัลที่ 1','mylotto'=>$mylotto];
+   } else {
+      $res=explode(' ',$lotto->lotto2);
+      if (in_array($mylotto, $res)) {
+         return ['reason'=>'คุณถูกรางวัลที่ 2','mylotto'=>$mylotto];
+      }
+      else {
+         $res = explode(' ',$lotto->lotto1closeup);
+         if (in_array($mylotto, $res)) {
+            return ['reason'=>'คุณถูกรางวัลข้างเคียงรางวัลที่ 1','mylotto'=>$mylotto];
+         } else {
+            $res=explode(' ',$lotto->lotto3);
+            if (in_array($mylotto, $res)) {
+               return ['reason'=>'คุณถูกรางวัลที่ 3','mylotto'=>$mylotto];
+            } else {
+               $res=explode(' ',$lotto->lotto4);
+               if (in_array($mylotto, $res)) {
+                  return ['reason'=>'คุณถูกรางวัลที่ 4','mylotto'=>$mylotto];
+               } else {
+                  $res=explode(' ',$lotto->lotto5);
+                  if (in_array($mylotto, $res)) {
+                     return ['reason'=>'คุณถูกรางวัลที่ 5','mylotto'=>$mylotto];
+                  } else {
+                     $res=explode(' ',$lotto->lotto_front3);
+                     $mylotto3n=substr($mylotto,0,3);
+                     if (in_array($mylotto3n,$res)) {
+                        return ['reason'=>'คุณถูกรางวัลเลขหน้า 3 ตัว','mylotto'=>$mylotto];
+                     } else {
+                        $res=explode(' ',$lotto->lotto_last3);
+                        $mylotto3=substr($mylotto,3);
+                        if (in_array($mylotto3,$res)) {
+                           return ['reason'=>'คุณถูกรางวัลเลขท้าย 3 ตัว','mylotto'=>$mylotto];
+                        } else {
+                           $mylotto2=substr($mylotto,4);
+                           if ($mylotto2 == $lotto->lotto_last2) {
+                              return ['reason'=>'คุณถูกรางวัลเลขท้าย 2 ตัว','mylotto'=>$mylotto];
+                           } else {
+                              return ['reason'=>'คุณไม่ถูกรางวัล','mylotto'=>$mylotto];
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}
+
 function getIP() {
    if (!empty($_SERVER['HTTP_CLIENT_IP'])) $ip_address = $_SERVER['HTTP_CLIENT_IP'];
    elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
