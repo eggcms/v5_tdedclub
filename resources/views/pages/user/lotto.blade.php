@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-4 text-center"><h3 class="text-center text-danger">เลขหน้า 3 ตัว</h3><p class="text-dark">{{$lotto->lotto_front3}}</p></div>
                                 <div class="col-4 text-center"><h3 class="text-center text-danger">เลขท้าย 3 ตัว</h3><p class="text-dark">{{$lotto->lotto_last3}}</p></div>
-                                <div class="col-4 text-center"><h3 class="text-center text-danger">เลขหน้า 2 ตัว</h3><p class="text-dark">{{$lotto->lotto_last2}}</p></div>
+                                <div class="col-4 text-center"><h3 class="text-center text-danger">เลขท้าย 2 ตัว</h3><p class="text-dark">{{$lotto->lotto_last2}}</p></div>
                             </div>
                         </div>
 
@@ -122,11 +122,11 @@
                 <div id="sidebar-scroll">
                     <div class="sidebar">
                         <a href="https://www.mm88online.com/" target="_blank">
-                            <img src="/images/pro.png" alt="Snow" style="width:100%">
+                            <img src="{{url('/images/pro.png')}}" alt="Snow" style="width:100%">
                         </a>
                         @include('component.line-notify')
                         <a href="https://www.mm88zean.com/" target="_blank">
-                            <img src="/images/bn-2.gif" alt="Snow" style="width:100%">
+                            <img src="{{url('/images/bn-2.gif')}}" alt="Snow" style="width:100%">
                         </a>
                     </div>
                 </div>
