@@ -47,16 +47,18 @@
 <div id="doball">
     <div class="container bg-black">
         <div class="row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-4 mb-2">
                 <div class="row">
-                    <div class="col">
-                        <a href="#"><img class="banner-auto" src="/images/check-lotto1.png" alt=""></a>
-                        <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="/images/promotion-1.jpg" alt=""></a>
+                    <div class="col-12 my-2">
+                        <a href="#"><img class="banner-auto" src="{{url('images/check-lotto1.png')}}" alt=""></a>
+                    </div>
+                    <div class="col-12">
+                        <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="{{url('images/promotion-1.jpg')}}" alt=""></a>
                     </div>
                     @include('component.line-notify')
                 </div>
             </div>
-            <div class="col-8">
+            <div class="col-12 col-sm-8">
                 <div>
                     <div id="mPlayer" class="bg-light"></div>
                 </div>
