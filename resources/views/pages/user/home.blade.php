@@ -50,7 +50,7 @@
             <div class="col-12 col-lg-4 mb-2">
                 <div class="row">
                     <div class="col-12 my-2">
-                        <a href="#"><img class="banner-auto" src="{{url('images/check-lotto1.png')}}" alt=""></a>
+                        <a href="{{url('/lotto')}}"><img class="banner-auto" src="{{url('images/check-lotto1.png')}}" alt=""></a>
                     </div>
                     <div class="col-12">
                         <a href="http://nav.cx/52dtFXm"><img class="banner-auto" src="{{url('images/promotion-1.jpg')}}" alt=""></a>
