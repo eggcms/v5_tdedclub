@@ -179,7 +179,6 @@
        <div class="row">
             <div class="col-12 pb-2">
                 <div class="row">
-
                      @foreach($analyzes as $an)
                     <div class="col-12 col-lg-4">
                         <a href="{{url('/vview/'.$an->id)}}">
@@ -194,6 +193,55 @@
     </div>
 </div>
 {{-- <วิเคราะห์บอล> --}}
+{{-- <แถบทีเด็ดบอลเต็ง> --}}
+<div id="tded-zean">
+    <div class="container bg-black">
+        <div class="row">
+            <div class="col-12">
+                <div class="title">
+                    <div class="row">
+                    <div class="col-12 texthead"><h1>ทีเด็ดบอลเต็ง {{ Date('d-m-Y') }}</h1></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <แถบทีเด็ดบอลเต็ง> --}}
+{{-- <ทีเด็ดบอลเต็ง> --}}
+
+<div id="zeantded">
+    <div class="container bg-black py-2">
+        <div class="row">
+             @foreach($tdbset as $tdb)
+            <div class="col-12 col-lg-3 pb-2">
+                <div class="img-tded">
+                    <a href="{{tslineID($tdb['img'])}}"><img src="{{url('images/step-' . $tdb['img'] . '.gif')}}" class="img-fluid"></a>
+                </div>
+                <div class="tdedstep">
+                <div class="py-2">
+                    @if($tdb['team1'] != '')
+                        <p><img class="img-1" src="{{url('/images/ball.gif')}}" alt=""><span style="color:{{$tdb['team1w']}}">{{$tdb['team1']}}</span></p>
+                    @else
+                        <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                    @endif
+                </div>
+                    <div class="py-2 bg-grey">
+                        @if($tdb['team2'] != '')
+                            <p><img class="img-1" src="{{url('/images/ball.gif')}}" alt=""><span style="color:{{$tdb['team2w']}}">{{$tdb['team2']}}</span></p>
+                        @else
+                            <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</div>
+{{-- <ทีเด็ดบอลเต็ง> --}}
+
+
 
 {{-- <แถบทีเด็ดเซียน> --}}
 <div id="tded-zean">
@@ -202,7 +250,7 @@
             <div class="col-12">
                 <div class="title">
                     <div class="row">
-                        <div class="col-12 texthead"><h1>ทีเด็ดสเต็ป วันที่ 9 มกราคม 2563</h1></div>
+                        <div class="col-12 texthead"><h1>ทีเด็ดบอลสเต็ป {{ Date('d-m-Y') }}</h1></div>
                     </div>
                 </div>
             </div>
@@ -215,7 +263,6 @@
 <div id="zeantded">
     <div class="container bg-black">
         <div class="row">
-
              @foreach($tsteps as $ts)
             <div class="col-12 col-lg-3 py-2">
                 <div class="img-tded">
@@ -242,7 +289,6 @@
                         @else
                             <p class="py-1 text-center">กำลังอัพเดทข้อมูล...</p>
                         @endif
-
                     </div>
                 </div>
             </div>

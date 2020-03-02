@@ -15,25 +15,25 @@
                 <h4 class="border-bottom pb-3 text-warning">ตรวจสลากกินแบ่งรัฐบาล งวดวันที่ {{ $lotto_at ?? '...' }}</h4>
                 <p><i class="fas fa-home"></i><a href="{{ url('/') }}">หน้าแรก</a> <i class="fas fa-angle-right"></i> <span>ตรวจสลากกินแบ่งรัฐบาล งวดวันที่ {{ $lotto_at ?? '...' }}</span></p>
                 <div>
-                @if($reason!='none')
-                    <div class="my-2 p-3 lotto_checked bg-warning rounded">
-                        <h1 class="text-center text-danger">ผลการตรวจสลากกินแบ่งรัฐบาล</h1>
-                        <p class="text-dark text-center">เลขสลาก: {{ $mylotto }}</p>
-                        <h3 class="text-center rounded text-light py-3 bg-danger">{{ $reason }}</h3>
-                    </div>
-                @endif
+                    @if($reason!='none')
+                        <div class="my-2 p-3 lotto_checked bg-warning rounded">
+                            <h1 class="text-center text-danger">ผลการตรวจสลากกินแบ่งรัฐบาล</h1>
+                            <p class="text-dark text-center">เลขสลาก: {{ $mylotto }}</p>
+                            <h3 class="text-center rounded text-light py-3 bg-danger">{{ $reason }}</h3>
+                        </div>
+                    @endif
                 </div>
-                    <div class="my-2 p-3 border check-lotto bg-egg rounded">
-                        <h3 class="text-center text-dark">ตรวจสลากกินแบ่งรัฐบาล</h3>
-                        <form action="/lotto" method="post">
-                            <div class="form-group text-center">
-                                <input type="type" name="ur_lotto" class="form-control text-center" placeholder="กรอกเลขสลาก" maxlength="6" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
-                            </div>
-                            <div id="result" class="form-group text-success bg-light py-2 px-3 rounded text-center">รอผลสลากกินแบ่ง</div>
-                            <button type="submit" class="btn btn-danger form-control">ตรวจสลากฯ ของคุณ</button>
-                            @csrf
-                        </form>
-                    </div>
+                <div class="my-2 p-3 border check-lotto bg-egg rounded">
+                    <h3 class="text-center text-dark">ตรวจสลากกินแบ่งรัฐบาล</h3>
+                    <form action="/lotto" method="post">
+                        <div class="form-group text-center">
+                            <input type="type" name="ur_lotto" class="form-control text-center" placeholder="กรอกเลขสลาก" maxlength="6" onkeyup="if (/\D/g.test(this.value)) this.value = this.value.replace(/\D/g,'')" required>
+                        </div>
+                        <div id="result" class="form-group text-success bg-light py-2 px-3 rounded text-center">รอผลสลากกินแบ่ง</div>
+                        <button type="submit" class="btn btn-danger form-control">ตรวจสลากฯ ของคุณ</button>
+                        @csrf
+                    </form>
+                </div>
                 <div class="lotto_result py-3 col bg-egg text-dark">
                     <div class="row">
                         <div class="col-12 py-3 border-bottom">
@@ -121,12 +121,19 @@
             <div class="col-md-4 py-1">
                 <div id="sidebar-scroll">
                     <div class="sidebar">
-                        <a href="https://www.mm88online.com/" target="_blank">
+                        {{-- <a href="https://www.mm88online.com/" target="_blank">
                             <img src="{{url('/images/pro.png')}}" alt="Snow" style="width:100%">
-                        </a>
+                        </a> --}}
+                        <div class="bg-egg rounded p-3">
+                            <h3 class="text-center">ตรวจหวยลาว</h3>
+                            <p class="text-center text-dark">
+                                งวดวันพุธที่ {{$lotto_lao_at}}
+                            </p>
+                            <h3 class="text-center">{{$lotto_lao}}</h3>
+                        </div>
                         @include('component.line-notify')
                         <a href="https://www.mm88zean.com/" target="_blank">
-                            <img src="{{url('/images/bn-2.gif')}}" alt="Snow" style="width:100%">
+                            <img src="{{url('/images/pro.png')}}" alt="Snow" style="width:100%">
                         </a>
                     </div>
                 </div>

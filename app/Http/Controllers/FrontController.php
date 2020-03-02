@@ -6,9 +6,11 @@ use Illuminate\Support\Arr;
 use App\Blog;
 use App\Analyze;
 use App\Tstep;
+use App\Tstep2;
 use App\Youtube;
 use App\User;
 use App\Lotto;
+use DB;
 class FrontController extends Controller
 {
 	public function index() {
@@ -73,6 +75,52 @@ class FrontController extends Controller
 			}
 		}
 
+
+
+		$tdBallData=Tstep2::orderBy('id','asc')->where('updated_at','>',date("Y-m-d 06:00:00"))->take(8)->get();
+
+		$max_tdball=$tdBallData->count();
+
+		$tdbSet = [];
+		$im2=0;
+        if ($max_tdball > 0) {
+			foreach($tdBallData as $tdBall) {
+                $im2 = $im2 + 1;
+				$av = User::where('id',$tdBall->uid)->first();
+				if ($tdBall->team1w == 0) { $tdBall->team1w='black'; }
+				elseif ($tdBall->team1w == 1) { $tdBall->team1w='red'; }
+				elseif ($tdBall->team1w == 2) { $tdBall->team1w='#00CC00'; }
+				if ($tdBall->team2w == 0) { $tdBall->team2w='black'; }
+				elseif ($tdBall->team2w == 1) { $tdBall->team2w='red'; }
+				elseif ($tdBall->team2w == 2) { $tdBall->team2w='#00CC00'; }
+
+				$tdbset[] = [
+					"id"=> $tdBall->id,
+					"uid"=> $tdBall->uid,
+					"team1"=> $tdBall->team1,
+					"team2"=> $tdBall->team2,
+					"team1w"=> $tdBall->team1w,
+					"team2w"=> $tdBall->team2w,
+					"created_at"=> $tdBall->created_at,
+                    "updated_at"=> $tdBall->updated_at,
+					"img"=> $im,
+					"facebook"=> $av->facebook,
+					"userline"=> $av->line
+				];
+			}
+			$mm2 = (8 - $max_tdball);
+			for($i=1;$i<=$mm2;$i++){
+				$imi2=$im2+$i;
+				$tdbset[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team1w"=> '',"team2w"=> '',"created_at"=> '',"updated_at"=> '',"img"=>$imi2,"line"=>''];
+			}
+		}
+		else {
+			for($i=1;$i<=8;$i++){
+				$imi2=$im2+$i;
+				$tdbset[] = ["id"=> '',"uid"=> '',"team1"=> '',"team2"=> '',"team1w"=> '',"team2w"=> '',"created_at"=> '',"updated_at"=> '',"img"=>$imi2,"line"=>''];
+			}
+		}
+//dd($tdbSet);
 		return view('pages.user.home',[
 			'meta_title'=>'ทีเด็ดคลับดอทคอม ศูนย์รวมทีเด็ดบอลสเต็ป โดยบรรดากูรู ระดับเซียนในวงการลูกหนัง',
 			'meta_description'=>'ทีเด็ดคลับดอทคอม ศูนย์รวมทีเด็ดบอลสเต็ป ข้อมูลบอลจากลีกดังทั่วโลก โดยมุ่งเน้นข้อมูลที่ถูกต้อง ฉับไวเที่ยงตรง โดยบรรดากูรู ระดับเซียนในวงการลูกหนัง',
@@ -82,7 +130,9 @@ class FrontController extends Controller
 			'objs'=>$objs,
             'youtubes'=>$yous,
             'tsteps'=>$dataxSet,
-            'tstep_count'=>$max_tstep,
+			'tstep_count'=>$max_tstep,
+			'tdbset'=>$tdbset,
+            'tdball_count'=>$max_tdball,
 		]);
 	}
 
@@ -207,9 +257,12 @@ class FrontController extends Controller
 	public function lotto() {
 		$lotto=Lotto::orderBy('lotto_at','desc')->first();
 		$lotto_at=explode('-',$lotto->lotto_at);
+		$lotto_lao_at=explode('-',$lotto->lotto_lao_at);
 		$month = Array("","ม.ค.","ก.พ.","มี.ค.","เม.ย.","พ.ค.","มิ.ย.","ก.ค.","ส.ค.","ก.ย.","ต.ค.","พ.ย.","ธ.ค.");
 		$at =(int) $lotto_at[1];
+		$lao_at =(int) $lotto_lao_at[1];
 		$lotto_at=$lotto_at[0].' '.$month[$at].' '.ceil($lotto_at[2]+543);
+		$lotto_lao_at=$lotto_lao_at[0].' '.$month[$lao_at].' '.ceil($lotto_lao_at[2]+543);
 		return view('pages.user.lotto',[
 			'lotto'=>$lotto,
 			'lotto1closeup'=>$lotto->lotto1,
@@ -221,6 +274,8 @@ class FrontController extends Controller
 			'lotto_last3'=>explode(' ',$lotto->lotto_last3),
 			'lotto_last2'=>$lotto->lotto_last2,
 			'lotto_at'=>$lotto_at,
+			'lotto_lao'=>$lotto->lotto_lao,
+			'lotto_lao_at'=>$lotto_lao_at,
 			'reason'=>'none',
 		]);
 	}
