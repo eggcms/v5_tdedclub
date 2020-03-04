@@ -216,7 +216,7 @@
              @foreach($tdbset as $tdb)
             <div class="col-12 col-lg-3 pb-2">
                 <div class="img-tded">
-                    <a href="{{tslineID($tdb['img'])}}"><img src="{{url('images/step-' . $tdb['img'] . '.gif')}}" class="img-fluid"></a>
+                    <a href="{{tslineID($tdb['img'])}}"><img src="{{url('images/bn-teng' . $tdb['img'] . '.jpg')}}" class="img-fluid"></a>
                 </div>
                 <div class="tdedstep">
                 <div class="py-2">
