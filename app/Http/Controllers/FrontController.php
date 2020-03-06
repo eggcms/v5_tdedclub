@@ -218,7 +218,7 @@ class FrontController extends Controller
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec( $ch );
         curl_close( $ch );
-        return Redirect()->back();
+		return view('pages.user.comp');
 	}
 
     public function liveball() {

@@ -20,7 +20,7 @@
 <div class="banner-1">
     <div class="container bg-black">
         <div class="row">
-            <div class="col"><a href="https://www.mm88online.com/"><img src="/images/bn-1.gif" alt=""></a></div>
+            <div class="col"><a href="https://www.mm88online.com/" target="_blank"><img src="{{ url('/images/bn-1.gif') }}" alt=""></a></div>
         </div>
     </div>
 </div>
@@ -63,7 +63,7 @@
                     <div id="mPlayer" class="bg-light"></div>
                 </div>
                 <div>
-                    <img class="leauge" src="/images/bn-leauge.png" alt="">
+                    <img class="leauge" src="{{ url('/images/bn-leauge.png') }}" alt="">
                 </div>
             </div>
         </div>
@@ -148,7 +148,7 @@
     <div class="container bg-black py-1">
         <div class="row">
             <div class="col-12">
-                <a href="https://www.mm88online.com/"><img src="/images/bn-3.gif" alt=""></a>
+                <a href="https://www.mm88online.com/" target="_blank"><img src="{{ url('/images/bn-3.gif') }}" alt=""></a>
                 <h2>ทรรศนะบอล ทีเด็ดบอล บ้านผลบอล</h2>
                 <p>ทรรศนะบอลวันนี้ วิเคราะห์บอลวันนี้ ทรรศนะเซียนบอล ทีเด็ดบอล ทีเด็ดบอลรายวัน ทีเด็ดบอลวันนี้ บอลเต็ง บอลสเต็ป บ้านผลบอล ทีเด็ดบอลเต็ง ทีเด็ดบอลเดี่ยว วิเคราะห์บอลทุกคู่ วิเคราะห์บอลทุกลีก ทรรศนะเซียนบอลวันนี้ ทีเด็ดบอลวันนี้ แหล่งรวมเซียนบอล ผลบอล วิเคราะห์บอลสุดแม่น ราคาบอล ทีเด็ดฟุตบอล ทีเด็ดบอลวันนี้ โปรแกรมบอลวันนี้</p>
             </div>
@@ -338,7 +338,7 @@
     <div class="container bg-black">
         <div class="row">
             <div class="col">
-                <a href="https://gudunung.com/"><img src="/images/bn-4.gif" alt=""></a>
+                <a href="https://gudunung.com/" target="_blank"><img src="{{url('/images/bn-4.gif')}}" alt=""></a>
             </div>
         </div>
     </div>
