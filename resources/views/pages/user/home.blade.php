@@ -200,7 +200,7 @@
             <div class="col-12">
                 <div class="title">
                     <div class="row">
-                    <div class="col-12 texthead"><h1>ทีเด็ดบอลเต็ง {{ Date('d-m-Y') }}</h1></div>
+                    <div class="col-12 texthead"><h1>ทีเด็ดบอลเต็ง {{ thDate(time()) }}</h1></div>
                     </div>
                 </div>
             </div>
@@ -250,7 +250,7 @@
             <div class="col-12">
                 <div class="title">
                     <div class="row">
-                        <div class="col-12 texthead"><h1>ทีเด็ดบอลสเต็ป {{ Date('d-m-Y') }}</h1></div>
+                        <div class="col-12 texthead"><h1>ทีเด็ดบอลสเต็ป {{ thDate(time()) }}</h1></div>
                     </div>
                 </div>
             </div>
